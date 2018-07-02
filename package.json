@@ -1,0 +1,45 @@
+{
+	"name": "dbt-sql",
+	"displayName": "dbt SQL Grammar",
+	"description": "dbt's SQL grammar for VS Code",
+	"version": "0.1.0",
+	"publisher": "joshpeng",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/joshpeng/dbt-sql"
+	},
+	"icon": "images/dbt_.png",
+	"galleryBanner": {
+		"color": "#CA465B",
+		"theme": "light"
+	},
+	"license": "MIT",
+	"contributes": {
+		"languages": [
+			{
+				"id": "sql",
+				"aliases": [
+					"SQL (dbt)"
+				],
+				"extensions": [
+					".sql",
+					".dsql"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "sql",
+				"scopeName": "source.sql",
+				"path": "./syntaxes/dbt_sql.json"
+			}
+		]
+	}
+}
