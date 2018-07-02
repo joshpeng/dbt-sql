@@ -383,7 +383,7 @@
 		"jinja_control": {
 			"patterns": [
 				{
-					"match": "\\b(?i)(for|in|endfor|else|if|endif|elif|set|call|endcallfrom|import|as|and|not|or)\\b",
+					"match": "\\b(?i)(for|in|endfor|else|if|endif|elif|set|call|endcallfrom|import|as|and|not|or|macro|endmacro)\\b",
 					"captures": {
 						"1": { "name": "jinja.keyword.control.sql" }
 					}
