@@ -192,7 +192,7 @@
 			"name": "keyword.operator.concatenator.sql"
 		},
 		{
-			"match": "(?i)\\b(avg|bool_or|checksum_agg|count|count_big|grouping|grouping_id|max|min|sum|stdev|stdevp|var|varp)\\b",
+			"match": "(?i)\\b(avg|bool_or|checksum_agg|count|count_big|grouping|grouping_id|listagg|max|min|sum|stdev|stdevp|var|varp)\\b",
 			"name": "support.function.aggregate.sql"
 		},
 		{
