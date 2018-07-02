@@ -1,4 +1,4 @@
-# dbt SQL Grammar for VS Code
+# dbt SQL Grammar for VS Code [![VS Code marketplace button](https://vsmarketplacebadge.apphb.com/installs/joshpeng.dbt-sql.svg)](https://marketplace.visualstudio.com/items?itemName=joshpeng.dbt-sql)
 ![dbt_](https://raw.githubusercontent.com/joshpeng/dbt-sql/master/images/dbt_.png)
 
 [dbt_](https://www.getdbt.com/) is a powerful CLI tool that helps data analysts/scientists/engineers transform data in their data warehouse. To do this, it uses Python's templating engine, [Jinja](http://jinja.pocoo.org/), inside your SQL files.

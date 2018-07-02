@@ -17,7 +17,7 @@
 	"icon": "images/dbt_.png",
 	"galleryBanner": {
 		"color": "#CA465B",
-		"theme": "light"
+		"theme": "dark"
 	},
 	"license": "MIT",
 	"contributes": {
