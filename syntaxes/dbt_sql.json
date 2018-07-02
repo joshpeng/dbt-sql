@@ -232,7 +232,7 @@
 			"name": "support.function.ranking.sql"
 		},
 		{
-			"match": "(?i)\\b(lag|lead)(?=\\()",
+			"match": "(?i)\\b(lag|lead|first_value|last_value)(?=\\()",
 			"name": "support.function.sequence.sql"
 		},
 		{
