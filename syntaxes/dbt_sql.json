@@ -346,6 +346,14 @@
 						{
 							"match": "-|\\+|/",
 							"name": "keyword.operator.math.sql"
+						},
+						{
+							"match": "([0-9a-zA-Z_]*)(\\()",
+							"captures": {
+								"1": {
+									"name": "jinja.function.sql"
+								}
+							}
 						}
 					]
 				},
@@ -374,6 +382,14 @@
 						},
 						{
 							"include": "#strings"
+						},
+						{
+							"match": "([0-9a-zA-Z_]*)(\\()",
+							"captures": {
+								"1": {
+									"name": "jinja.function.sql"
+								}
+							}
 						}
 					]
 				}
