@@ -319,13 +319,13 @@
 					"begin": "\\{\\{",
 					"beginCaptures": {
 						"0": {
-							"name": "jinja.statement.begin.sql"
+							"name": "variable.function.begin.sql"
 						}
 					},
 					"end": "\\}\\}",
 					"endCaptures": {
 						"0": {
-							"name": "jinja.statement.end.sql"
+							"name": "variable.function.end.sql"
 						}
 					},
 					"patterns": [
@@ -354,7 +354,7 @@
 							"match": "([0-9a-zA-Z_]*)(\\()",
 							"captures": {
 								"1": {
-									"name": "jinja.function.sql"
+									"name": "support.function.sql"
 								}
 							}
 						}
@@ -364,16 +364,16 @@
 					"begin": "\\{\\%-?",
 					"beginCaptures": {
 						"0": {
-							"name": "jinja.expression.begin.sql"
+							"name": "variable.function.begin.sql"
 						}
 					},
 					"end": "-?\\%\\}",
 					"endCaptures": {
 						"0": {
-							"name": "jinja.expression.end.sql"
+							"name": "variable.function.end.sql"
 						},
 						"1": {
-							"name": "jinja.expression.end.sql"
+							"name": "variable.function.end.sql"
 						}
 					},
 					"patterns": [
@@ -390,7 +390,7 @@
 							"match": "([0-9a-zA-Z_]*)(\\()",
 							"captures": {
 								"1": {
-									"name": "jinja.function.sql"
+									"name": "support.function.sql"
 								}
 							}
 						}
@@ -402,23 +402,19 @@
 			"patterns": [
 				{
 					"match": "(?i)(adapter|invocation_id|run_started_at|this|target|exceptions|flags|api|api.Relation|api.Column)",
-					"name": "jinja.object.sql"
-				},
-				{
-					"match": "\\.",
-					"name": "jinja.operator.accessor.sql"
+					"name": "variable.other.object.sql"
 				},
 				{
 					"match": "(?i)(already_exists|get_columns_in_table|get_missing_columns|query_for_existing)",
-					"name": "jinja.object.function.sql"
+					"name": "support.function.sql"
 				},
 				{
 					"match": "(?i)(schema|table|name|dbname|database|host|type|user|port|threads|STRICT_MODE|NON_DESTRUCTIVE|FULL_REFRESH)",
-					"name": "jinja.object.property.sql"
+					"name": "variable.other.sql"
 				},
 				{
 					"match": "(?i)(ref|var|env_var|log|return|config)",
-					"name": "jinja.function.sql"
+					"name": "support.function.sql"
 				}
 			]
 		},
@@ -427,7 +423,7 @@
 				{
 					"match": "\\b(?i)(for|in|endfor|else|if|endif|elif|set|call|endcallfrom|import|as|and|not|or|macro|endmacro)\\b",
 					"captures": {
-						"1": { "name": "jinja.keyword.control.sql" }
+						"1": { "name": "entity.name.function.sql" }
 					}
 				}
 			]
