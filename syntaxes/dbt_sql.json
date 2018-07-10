@@ -147,7 +147,7 @@
 			"name": "constant.boolean.sql"
 		},
 		{
-			"match": "(?i:\\b(select(\\s+distinct)?|insert\\s+(ignore\\s+)?into|update|delete|from|set|where|group\\sby|or|like|ilike|and|union(\\s+all)?|having|order\\sby|limit|(inner|cross)\\s+join|join|straight_join|full\\s+outer\\s+join|(left|right)(\\s+outer)?\\s+join|natural(\\s+(left|right)(\\s+outer)?)?\\s+join)\\b)",
+			"match": "(?i:\\b(select(\\s+distinct)?|insert\\s+(ignore\\s+)?into|update|delete|from|set|where|group\\sby|or|like|ilike|interval|and|union(\\s+all)?|having|order\\sby|limit|(inner|cross)\\s+join|join|straight_join|full\\s+outer\\s+join|(left|right)(\\s+outer)?\\s+join|natural(\\s+(left|right)(\\s+outer)?)?\\s+join)\\b)",
 			"name": "keyword.other.DML.sql"
 		},
 		{
@@ -215,7 +215,7 @@
 			"name": "support.function.cursor.sql"
 		},
 		{
-			"match": "(?i)(\\b|\\()(?<!::)(sysdatetime|sysdatetimeoffset|sysutcdatetime|current_time(stamp)?|convert_timezone|getdate|getutcdate|date|date_trunc|datename|datepart|day|month|year|datefromparts|datetime2fromparts|datetimefromparts|datetimeoffsetfromparts|smalldatetimefromparts|timefromparts|datediff|dateadd|eomonth|switchoffset|todatetimeoffset|isdate)\\b",
+			"match": "(?i)(\\b|\\()(?<!::)(sysdatetime|sysdatetimeoffset|sysutcdatetime|current_time(stamp)?|convert_timezone|getdate|getutcdate|date|date_trunc|datename|datepart|day|month|year|datefromparts|datetime2fromparts|datetimefromparts|datetimeoffsetfromparts|smalldatetimefromparts|timefromparts|datediff|dateadd|eomonth|switchoffset|todatetimeoffset|isdate)\\s*\\(",
 			"captures": {
 				"2": {
 					"name": "support.function.datetime.sql"
@@ -395,6 +395,9 @@
 							}
 						}
 					]
+				},
+				{
+					"include": "#jinja_comments"
 				}
 			]
 		},
@@ -402,6 +405,7 @@
 			"patterns": [
 				{
 					"match": "(?i)(adapter|invocation_id|run_started_at|this|target|exceptions|flags|api|api.Relation|api.Column)",
+					"comment": "entity.name.class.sql",
 					"name": "variable.other.object.sql"
 				},
 				{
@@ -425,6 +429,20 @@
 					"captures": {
 						"1": { "name": "entity.name.function.sql" }
 					}
+				}
+			]
+		},
+		"jinja_comments": {
+			"patterns": [
+				{
+					"begin": "\\{\\#",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.sql"
+						}
+					},
+					"end": "\\#\\}",
+					"name": "comment.line.jinja.sql"
 				}
 			]
 		},
